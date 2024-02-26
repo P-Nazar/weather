@@ -2,7 +2,8 @@ export interface Weather {
   cod: string;
   message: number;
   cnt: number;
-  list: any[]; // Передумова, що ви опрацьовуєте список погодних даних
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  list: any[]; 
   city: CityData;
 }
 
@@ -15,7 +16,7 @@ export interface CityData {
   sunrise: number;
   sunset: number;
   timezone: number;
-  temp: number;
+  temp: number | undefined;
   speed: number;
   deg: number;
   description: string;
