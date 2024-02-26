@@ -122,7 +122,7 @@ export function App() {
           <>
             <div className={query.toLowerCase() === city?.name.toLowerCase() ? 'weather-box fadeIn' : 'weather-box'}>
               <img src={weatherImage} alt="Weather" />
-              <p className="temperature">{kelvinToCelsius(city?.temp)}°</p>
+              <p className="temperature">{city?.temp ? kelvinToCelsius(city.temp) : 'N/A'}°</p>
               <p className="description">{city?.description}</p>
             </div>
             <div className={query.toLowerCase() === city?.name.toLowerCase() ? 'weather-details fadeIn' : 'weather-details'}>
@@ -146,7 +146,7 @@ export function App() {
           <>
             <div className={prevQuery.toLowerCase() === city?.name.toLowerCase() ? 'weather-box fadeIn' : 'weather-box'}>
               <img src={weatherImage} alt="Weather" />
-              <p className="temperature">{kelvinToCelsius(city?.temp)}°</p>
+              <p className="temperature">{city?.temp ? kelvinToCelsius(city.temp) : 'N/A'}°</p>
               <p className="description">{city?.description}</p>
             </div>
             <div className={prevQuery.toLowerCase() === city?.name.toLowerCase() ? 'weather-details fadeIn' : 'weather-details'}>
